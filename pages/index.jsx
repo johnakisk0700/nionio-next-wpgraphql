@@ -24,6 +24,7 @@ import Head from "next/head";
 
 export default function IndexPage(props) {
   const { posts, featuredPost, featuredCategories } = props;
+  if (!posts.length || !featuredPost) return <>Error</>;
   return (
     <Box>
       <Head>
