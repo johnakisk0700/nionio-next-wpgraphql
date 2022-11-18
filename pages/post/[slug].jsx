@@ -12,6 +12,7 @@ function Post({ post }) {
   const SEO = useMemo(() => {
     return parse(post.seo.fullHead);
   }, [post.seo.fullHead]);
+
   return (
     <>
       <Head>{SEO}</Head>
@@ -19,7 +20,7 @@ function Post({ post }) {
         <Image
           src={
             post.featuredImage?.node?.sourceUrl ??
-            "http://nionio.gr/wp-content/uploads/2022/05/cropped-Nionio-logos_transparent.png"
+            "http://wp.nionio.gr/wp-content/uploads/2022/11/logo.png"
           }
           layout="fill"
           objectFit="cover"
@@ -29,8 +30,7 @@ function Post({ post }) {
         {post.title}
       </Heading>
       <Text fontSize="2xs">{post.dateGmt}</Text>
-      <Text dangerouslySetInnerHTML={{ __html: post.content }}></Text>
-      <Stack></Stack>
+      <Box dangerouslySetInnerHTML={{ __html: post.content }}></Box>
     </>
   );
 }
@@ -70,6 +70,6 @@ export async function getStaticPaths() {
 
   return {
     paths: pathsData,
-    fallback: true,
+    fallback: "blocking",
   };
 }
