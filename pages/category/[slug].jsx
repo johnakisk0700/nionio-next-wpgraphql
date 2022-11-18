@@ -13,10 +13,10 @@ function Category({ categoryName, posts }) {
       </Heading>
       <Stack gap={4}>
         {posts.map((post) => (
-          <>
+          <React.Fragment key={post.slug}>
             <BigPostPreview post={post} />
             <Divider />
-          </>
+          </React.Fragment>
         ))}
       </Stack>
     </>

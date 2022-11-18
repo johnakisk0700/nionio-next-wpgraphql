@@ -8,7 +8,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/logo.png" />
       </Head>
       <body>
         {/* 👇 Here's the script */}

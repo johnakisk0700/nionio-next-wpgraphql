@@ -7,9 +7,6 @@ const Layout = (props) => {
   const bg = useColorModeValue("white", "gray.800");
   return (
     <>
-      <Head>
-        <title>Woocommerce React Theme</title>
-      </Head>
       <Box bg={bg}>
         <Header />
         <Flex

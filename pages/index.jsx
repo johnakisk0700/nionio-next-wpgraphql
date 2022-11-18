@@ -20,11 +20,15 @@ import { styleConsts } from "../src/styles/constants";
 import { GET_POSTS_BY_CATEGORY } from "../src/queries/posts-by-category";
 import { featuredCategoriesArr } from "../NionioControl";
 import React from "react";
+import Head from "next/head";
 
 export default function IndexPage(props) {
   const { posts, featuredPost, featuredCategories } = props;
   return (
     <Box>
+      <Head>
+        <title>Αρχική</title>
+      </Head>
       <Heading textAlign="right" fontSize="md" mb={4}>
         Τελευταία Post
       </Heading>

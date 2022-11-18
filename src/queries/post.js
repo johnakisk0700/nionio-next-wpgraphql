@@ -17,6 +17,9 @@ export const GET_POST = gql`
           slug
         }
       }
+      seo {
+        fullHead
+      }
     }
   }
 `;

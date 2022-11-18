@@ -53,7 +53,7 @@ const BigPostPreview = ({ post }) => {
         </Text>
         {post.tags.nodes &&
           post.tags.nodes.map((tag) => (
-            <Tag mr={1} variant="post">
+            <Tag mr={1} variant="post" key={tag.name}>
               {tag.name}
             </Tag>
           ))}

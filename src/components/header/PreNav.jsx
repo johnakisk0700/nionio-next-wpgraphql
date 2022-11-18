@@ -14,12 +14,14 @@ import { MdModeNight, MdLightMode } from "react-icons/md";
 import BurgerMenu from "./BurgerMenu";
 import SearchBar from "../SearchBar";
 import { TriangleUpIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 const logoSize = 150;
 
 const PreNav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue("blackAlpha.200", "black");
+  const { pathname } = useRouter();
 
   return (
     <Box bg={bg}>
@@ -31,7 +33,7 @@ const PreNav = () => {
                 <BurgerMenu />
               </Hide>
               <Hide below="md">
-                <SearchBar />
+                {pathname !== "/search" && <SearchBar variant="nav" />}
               </Hide>
             </Flex>
 
